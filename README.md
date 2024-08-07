@@ -1,1 +1,1 @@
-# Automatic DJ Transitions with Differentiable Audio Effects and Generative Adversarial Networks Demo
+This is the source code for demo page of the paper _AI TrackMate: Finally, Someone Who’ll Give Your Music More Than Just ’Sounds Great!’_

@@ -1,193 +1,26 @@
-This is the demo page for the paper **"Automatic DJ Transitions with Differentiable Audio Effects and Generative Adversarial Networks"**.
-
+This is the demo page for the paper **"AI TrackMate: Finally, Someone Who’ll Give Your Music More Than Just ’Sounds Great!’"**.
 
 ## Abstract
-A central task of a Disc Jockey (DJ) is to create a mixset of music with seamless transitions between adjacent tracks. In this paper, we explore a data-driven approach that uses a generative adversarial network to create the song transition by learning from real-world DJ mixes. In particular, the generator of the model uses two differentiable digital signal processing components, an Equalizer (EQ) and fader, to mix two tracks selected by a data generation pipeline. The generator has to set the parameters of the EQs and fader in such a way that the resulting mix resembles real mixes created by human DJ, as judged by the discriminator counterpart. Result of a listening test shows that the model can achieve competitive results compared with baselines.
 
-### Audio Samples
+The rise of \emph{"bedroom producers"} has democratized music creation, but challenges producers to objectively evaluate their work. We present AI TrackMate, an LLM-based music chatbot designed to provide constructive feedback on music productions. Unlike previous approaches, AI TrackMate leverages the inherent musical knowledge of LLMs and focuses on production-oriented feedback. Our framework consists of a Music Analysis Module, an LLM Readable Music Report, and Production-Oriented Feedback Instruction for LLM. This plug-and-play, training-free system is compatible with various LLMs and adaptable to future advancements. We demonstrate AI TrackMate through an interactive web interface and conduct a pilot study with a music producer. By bridging AI capabilities with the needs of independent producers, AI TrackMate offers round-the-clock, nuanced feedback, potentially transforming the creative process and skill development in music production.
 
-<hr>
-We include 8 groups (A–H) of paired tracks (x1, x2) from the testing set, and for each transition type, we include 2 groups of paired tracks. Furthermore, we create 5 mixes (x3^) in each row by the following approaches with the same paired. In colclusion, we provide totally 7 audios in each row which include 2 paired tracks and 5 mixs, the detailed is shown below.
-<hr>
+### System
 
-![Mixing Pipeline](./assets/images/pipeline.png 'Mixing Pipeline')
+![System Overview](./assets/images/system.png "System Overview")
 
+The system comprises three layers:
 
+1. User Interface for audio upload, query input, and feedback reception
+2. Data Processing for handling raw audio and text
+3. AI Analysis, featuring a Music Analysis Module that transforms raw audio into LLM-readable reports, and an LLM that processes these reports along with user queries. Guided by music production-oriented feedback instructions, the LLM generates insights comparable to those of a music producer.
 
-1. `Prev`   : track which is considered to be the first track in a mix as shown in figure above (x1)
-2. `Next`   : track which is considered to be the second track in a mix as shown in figure above (x2)
-3. `Sum`    : transitions created by summation of two tracks without any effects
-4. `Linear` : transitions created by applying linear cross-fading in the transition region
-5. `Rule`   : transitions created by general purpose expert DJs' rule
-6. `GAN`    : transitions created by GANs' generator (our proposed)
-7. `Human`  : transitions created by an expert DJ
+### Examples
 
+#### Videos
 
+#### Text
 
-
-#### non-vocal to non-vocal (nv-nv)
-
-<table style='text-align: center;'>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>Prev</td>
-      <td>Next</td>
-      <td>Sum</td>
-      <td>Linear</td>
-      <td>Rule</td>
-      <td>GAN</td>
-      <td>Human</td>
-    </tr>
-    <tr>
-      <td>A</td>
-      <td><audio controls=""><source src="./assets/audios/1/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/1/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/1/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/1/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/1/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/1/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/1/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>B</td>
-      <td><audio controls=""><source src="./assets/audios/2/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/2/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/2/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/2/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/2/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/2/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/2/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tfoot>
-</table>
-
-#### non-vocal to vocal (nv-v)
-
-<table style='text-align: center;'>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>Prev</td>
-      <td>Next</td>
-      <td>Sum</td>
-      <td>Linear</td>
-      <td>Rule</td>
-      <td>GAN</td>
-      <td>Human</td>
-    </tr>
-    <tr>
-      <td>C</td>
-      <td><audio controls=""><source src="./assets/audios/3/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/3/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/3/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/3/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/3/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/3/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/3/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>D</td>
-      <td><audio controls=""><source src="./assets/audios/4/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/4/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/4/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/4/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/4/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/4/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/4/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tfoot>
-</table>
-
-
-
-#### vocal to non-vocal (v-nv)
-
-<table style='text-align: center;'>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>Prev</td>
-      <td>Next</td>
-      <td>Sum</td>
-      <td>Linear</td>
-      <td>Rule</td>
-      <td>GAN</td>
-      <td>Human</td>
-    </tr>
-    <tr>
-      <td>E</td>
-      <td><audio controls=""><source src="./assets/audios/5/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/5/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/5/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/5/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/5/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/5/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/5/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>F</td>
-      <td><audio controls=""><source src="./assets/audios/6/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/6/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/6/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/6/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/6/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/6/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/6/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tfoot>
-</table>
-
-
-#### vocal to vocal (v-v)
-
-<table style='font-size: 12px; text-align: center;'>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>Prev</td>
-      <td>Next</td>
-      <td>Sum</td>
-      <td>Linear</td>
-      <td>Rule</td>
-      <td>GAN</td>
-      <td>Human</td>
-    </tr>
-    <tr>
-      <td>G</td>
-      <td><audio controls=""><source src="./assets/audios/7/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/7/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/7/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/7/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/7/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/7/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/7/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>H</td>
-      <td><audio controls=""><source src="./assets/audios/8/prev.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/8/next.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/8/sum.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/8/linear.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/8/rule.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/8/gan.wav" type="audio/mpeg" /></audio></td>
-      <td><audio controls=""><source src="./assets/audios/8/human.wav" type="audio/mpeg" /></audio></td>
-    </tr>
-  </tfoot>
-</table>
-
-
-
-### Contact 
+### Contact
 
 <hr>
 Bo-Yu Chen: bernie40916@gmail.com
-
