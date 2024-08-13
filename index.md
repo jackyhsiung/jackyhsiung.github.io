@@ -4,7 +4,7 @@ This is the demo page for the paper **"AI TrackMate: Finally, Someone Who’ll G
 
 The rise of _"bedroom producers"_ has democratized music creation, but challenges producers to objectively evaluate their work. We present AI TrackMate, an LLM-based music chatbot designed to provide constructive feedback on music productions. Unlike previous approaches, AI TrackMate leverages the inherent musical knowledge of LLMs and focuses on production-oriented feedback. Our framework consists of a Music Analysis Module, an LLM Readable Music Report, and Production-Oriented Feedback Instruction for LLM. This plug-and-play, training-free system is compatible with various LLMs and adaptable to future advancements. We demonstrate AI TrackMate through an interactive web interface and conduct a pilot study with a music producer. By bridging AI capabilities with the needs of independent producers, AI TrackMate offers round-the-clock, nuanced feedback, potentially transforming the creative process and skill development in music production.
 
-### System
+## System
 
 ![System Overview](./assets/images/system.png "System Overview")
 
@@ -14,13 +14,13 @@ The system comprises three layers:
 1. Data Processing for handling raw audio and text
 1. AI Analysis, featuring a Music Analysis Module that transforms raw audio into LLM-readable reports, and an LLM that processes these reports along with user queries. Guided by music production-oriented feedback instructions, the LLM generates insights comparable to those of a music producer.
 
-### Examples
+## Example
 
-#### Videos
-
-#### Text
-
-### Contact
+### AI Producer Dialogue History
 
 <hr>
+Yi-Lin Jiang: rogerylc@gmail.com
+Chia-Ho Hsiung: chiahohsiung@gmail.com
+Yen-Tung Yeh: r12942179@ntu.edu.tw
+Lu-Rong Chen: warconvict@gmail.com
 Bo-Yu Chen: bernie40916@gmail.com
