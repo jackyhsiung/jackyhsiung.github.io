@@ -19,8 +19,8 @@ The system comprises three layers:
 ### AI Producer Dialogue History
 
 <hr>
-Yi-Lin Jiang: rogerylc@gmail.com
-Chia-Ho Hsiung: chiahohsiung@gmail.com
-Yen-Tung Yeh: r12942179@ntu.edu.tw
-Lu-Rong Chen: warconvict@gmail.com
-Bo-Yu Chen: bernie40916@gmail.com
+Yi-Lin Jiang: rogerylc@gmail.com<br /> 
+Chia-Ho Hsiung: chiahohsiung@gmail.com<br /> 
+Yen-Tung Yeh: r12942179@ntu.edu.tw<br />
+Lu-Rong Chen: warconvict@gmail.com<br />
+Bo-Yu Chen: bernie40916@gmail.com<br />
